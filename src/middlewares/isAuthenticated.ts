@@ -20,7 +20,11 @@ export function isAuthenticated(
 
   try {
     const { sub } = verify(token, process.env.SECRET_JWT) as Payload;
+
+    req.user_id = sub
+
     next();
+
   } catch (err) {
     return res.status(401).json({ error: err.message });
   }

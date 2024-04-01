@@ -8,7 +8,7 @@ interface UserRequest {
 }
 
 export class CreateUserService {
-  async executable({ name, email, password }: UserRequest) {
+  async execute({ name, email, password }: UserRequest) {
     if (!email) {
       throw new Error("Email is required");
     }
