@@ -14,6 +14,7 @@ import { AddItemsController } from "./controllers/Order/AddItemsController";
 import { DeleteItemController } from "./controllers/Order/DeleteItemController";
 import { SendOrderController } from "./controllers/Order/SendOrderController";
 import { ListOrdersController } from "./controllers/Order/ListOrdersControllers";
+import { DetailOrderController } from "./controllers/Order/DetailOrderController";
 import uploadConfig from './config/multer'
 
 
@@ -38,6 +39,6 @@ router.post('/orders/items', isAuthenticated, new AddItemsController().handle)
 router.delete('/orders/items', isAuthenticated, new DeleteItemController().handle)
 router.put('/orders/send', isAuthenticated, new SendOrderController().handle)
 router.get ('/orders', isAuthenticated, new ListOrdersController().handle)
-
+router.get ('/orders/items', isAuthenticated, new DetailOrderController().handle)
 
 export { router }
